@@ -67,7 +67,7 @@ public:
 };
 
 extern "C" {
-    IDeckLinkIterator_v8_0*                     BMD_PUBLIC CreateDeckLinkIteratorInstance_v8_0 (void);
+    BMD_PUBLIC IDeckLinkIterator_v8_0* CreateDeckLinkIteratorInstance_v8_0 (void);
 };
 
 #endif	// defined __cplusplus

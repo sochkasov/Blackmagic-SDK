@@ -407,9 +407,9 @@ public:
 
 extern "C" {
 
-	IDeckLinkIterator*							BMD_PUBLIC CreateDeckLinkIteratorInstance_v7_6 (void);
-	IDeckLinkGLScreenPreviewHelper_v7_6*		BMD_PUBLIC CreateOpenGLScreenPreviewHelper_v7_6 (void);
-    IDeckLinkVideoConversion_v7_6*				BMD_PUBLIC CreateVideoConversionInstance_v7_6 (void);
+	BMD_PUBLIC IDeckLinkIterator* CreateDeckLinkIteratorInstance_v7_6 (void);
+	BMD_PUBLIC IDeckLinkGLScreenPreviewHelper_v7_6* CreateOpenGLScreenPreviewHelper_v7_6 (void);
+    BMD_PUBLIC IDeckLinkVideoConversion_v7_6* CreateVideoConversionInstance_v7_6 (void);
 
 };
 

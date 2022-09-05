@@ -1,5 +1,5 @@
 /* -LICENSE-START-
- ** Copyright (c) 2021 Blackmagic Design
+ ** Copyright (c) 2022 Blackmagic Design
  **  
  ** Permission is hereby granted, free of charge, to any person or organization 
  ** obtaining a copy of the software and accompanying documentation (the 
@@ -1113,7 +1113,7 @@ protected:
     virtual ~IDeckLinkScreenPreviewCallback () {} // call Release method to drop reference count
 };
 
-/* Interface IDeckLinkGLScreenPreviewHelper - Created with CoCreateInstance on platforms with native COM support or from CreateOpenGLScreenPreviewHelper on other platforms. */
+/* Interface IDeckLinkGLScreenPreviewHelper - Created with CoCreateInstance on platforms with native COM support or from CreateOpenGLScreenPreviewHelper/CreateOpenGL3ScreenPreviewHelper on other platforms. */
 
 class BMD_PUBLIC IDeckLinkGLScreenPreviewHelper : public IUnknown
 {
@@ -1283,12 +1283,13 @@ protected:
 
 extern "C" {
 
-    IDeckLinkIterator* BMD_PUBLIC CreateDeckLinkIteratorInstance(void);
-    IDeckLinkDiscovery* BMD_PUBLIC CreateDeckLinkDiscoveryInstance(void);
-    IDeckLinkAPIInformation* BMD_PUBLIC CreateDeckLinkAPIInformationInstance(void);
-    IDeckLinkGLScreenPreviewHelper* BMD_PUBLIC CreateOpenGLScreenPreviewHelper(void);
-    IDeckLinkVideoConversion* BMD_PUBLIC CreateVideoConversionInstance(void);
-    IDeckLinkVideoFrameAncillaryPackets* BMD_PUBLIC CreateVideoFrameAncillaryPacketsInstance(void);	// For use when creating a custom IDeckLinkVideoFrame without wrapping IDeckLinkOutput::CreateVideoFrame
+    BMD_PUBLIC IDeckLinkIterator* CreateDeckLinkIteratorInstance(void);
+    BMD_PUBLIC IDeckLinkDiscovery* CreateDeckLinkDiscoveryInstance(void);
+    BMD_PUBLIC IDeckLinkAPIInformation* CreateDeckLinkAPIInformationInstance(void);
+    BMD_PUBLIC IDeckLinkGLScreenPreviewHelper* CreateOpenGLScreenPreviewHelper(void);
+    BMD_PUBLIC IDeckLinkGLScreenPreviewHelper* CreateOpenGL3ScreenPreviewHelper(void);	// Requires OpenGL 3.2 support and provides improved performance and color handling
+    BMD_PUBLIC IDeckLinkVideoConversion* CreateVideoConversionInstance(void);
+    BMD_PUBLIC IDeckLinkVideoFrameAncillaryPackets* CreateVideoFrameAncillaryPacketsInstance(void);	// For use when creating a custom IDeckLinkVideoFrame without wrapping IDeckLinkOutput::CreateVideoFrame
 
 }
 

@@ -1,5 +1,5 @@
 /* -LICENSE-START-
- ** Copyright (c) 2022 Blackmagic Design
+ ** Copyright (c) 2023 Blackmagic Design
  **  
  ** Permission is hereby granted, free of charge, to any person or organization 
  ** obtaining a copy of the software and accompanying documentation (the 
@@ -436,6 +436,15 @@ enum _BMDDeckLinkFrameMetadataID {
     bmdDeckLinkFrameMetadataHDRMaximumFrameAverageLightLevel     = /* 'fall' */ 0x66616C6C	// Maximum Frame Average Light Level in range 1 cd/m2 - 65535 cd/m2
 };
 
+/* Enum BMDEthernetLinkState - The state of the Ethernet link */
+
+typedef uint32_t BMDEthernetLinkState;
+enum _BMDEthernetLinkState {
+    bmdEthernetLinkStateDisconnected                             = /* 'elds' */ 0x656C6473,
+    bmdEthernetLinkStateConnectedUnbound                         = /* 'elcu' */ 0x656C6375,
+    bmdEthernetLinkStateConnectedBound                           = /* 'elcb' */ 0x656C6362
+};
+
 /* Enum BMDProfileID - Identifies a profile */
 
 typedef uint32_t BMDProfileID;
@@ -537,7 +546,8 @@ enum _BMDDeckLinkAttributeID {
     BMDDeckLinkVendorName                                        = /* 'vndr' */ 0x766E6472,
     BMDDeckLinkDisplayName                                       = /* 'dspn' */ 0x6473706E,
     BMDDeckLinkModelName                                         = /* 'mdln' */ 0x6D646C6E,
-    BMDDeckLinkDeviceHandle                                      = /* 'devh' */ 0x64657668
+    BMDDeckLinkDeviceHandle                                      = /* 'devh' */ 0x64657668,
+    BMDDeckLinkEthernetMACAddress                                = /* 'eMAC' */ 0x654D4143
 };
 
 /* Enum BMDDeckLinkAPIInformationID - DeckLinkAPI information ID */
@@ -568,6 +578,7 @@ enum _BMDDeckLinkStatusID {
     bmdDeckLinkStatusCurrentVideoInputFlags                      = /* 'cvif' */ 0x63766966,
     bmdDeckLinkStatusCurrentVideoOutputMode                      = /* 'cvom' */ 0x63766F6D,
     bmdDeckLinkStatusCurrentVideoOutputFlags                     = /* 'cvof' */ 0x63766F66,
+    bmdDeckLinkStatusEthernetLink                                = /* 'sels' */ 0x73656C73,
     bmdDeckLinkStatusPCIExpressLinkWidth                         = /* 'pwid' */ 0x70776964,
     bmdDeckLinkStatusPCIExpressLinkSpeed                         = /* 'plnk' */ 0x706C6E6B,
     bmdDeckLinkStatusLastVideoOutputPixelFormat                  = /* 'opix' */ 0x6F706978,
@@ -581,6 +592,19 @@ enum _BMDDeckLinkStatusID {
 
     bmdDeckLinkStatusVideoInputSignalLocked                      = /* 'visl' */ 0x7669736C,
     bmdDeckLinkStatusReferenceSignalLocked                       = /* 'refl' */ 0x7265666C,
+
+    /* Strings */
+
+    bmdDeckLinkStatusEthernetLocalIPAddress                      = /* 'seip' */ 0x73656970,
+    bmdDeckLinkStatusEthernetSubnetMask                          = /* 'sesm' */ 0x7365736D,
+    bmdDeckLinkStatusEthernetGatewayIPAddress                    = /* 'segw' */ 0x73656777,
+    bmdDeckLinkStatusEthernetPrimaryDNS                          = /* 'sepd' */ 0x73657064,
+    bmdDeckLinkStatusEthernetSecondaryDNS                        = /* 'sesd' */ 0x73657364,
+    bmdDeckLinkStatusEthernetPTPGrandmasterIdentity              = /* 'spid' */ 0x73706964,
+    bmdDeckLinkStatusEthernetVideoOutputAddress                  = /* 'soav' */ 0x736F6176,
+    bmdDeckLinkStatusEthernetAudioOutputAddress                  = /* 'soaa' */ 0x736F6161,
+    bmdDeckLinkStatusEthernetAncillaryOutputAddress              = /* 'soaA' */ 0x736F6141,
+    bmdDeckLinkStatusEthernetAudioInputChannelOrder              = /* 'saco' */ 0x7361636F,
 
     /* Bytes */
 

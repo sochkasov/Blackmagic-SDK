@@ -1,5 +1,5 @@
 /* -LICENSE-START-
- ** Copyright (c) 2023 Blackmagic Design
+ ** Copyright (c) 2024 Blackmagic Design
  **  
  ** Permission is hereby granted, free of charge, to any person or organization 
  ** obtaining a copy of the software and accompanying documentation (the 
@@ -38,6 +38,10 @@
  ** -LICENSE-END-
  */
 
+
+/*
+ * -- AUTOMATICALLY GENERATED - DO NOT EDIT ---
+ */
 
 #ifndef BMD_DECKLINKAPI_H
 #define BMD_DECKLINKAPI_H
@@ -135,7 +139,8 @@ enum _BMDSupportedVideoModeFlags {
     bmdSupportedVideoModeSDISingleLink                           = 1 << 2,
     bmdSupportedVideoModeSDIDualLink                             = 1 << 3,
     bmdSupportedVideoModeSDIQuadLink                             = 1 << 4,
-    bmdSupportedVideoModeInAnyProfile                            = 1 << 5
+    bmdSupportedVideoModeInAnyProfile                            = 1 << 5,
+    bmdSupportedVideoModePsF                                     = 1 << 6
 };
 
 /* Enum BMDPacketType - Type of packet */
@@ -152,6 +157,7 @@ typedef uint32_t BMDFrameFlags;
 enum _BMDFrameFlags {
     bmdFrameFlagDefault                                          = 0,
     bmdFrameFlagFlipVertical                                     = 1 << 0,
+    bmdFrameFlagMonitorOutOnly                                   = 1 << 3,
     bmdFrameContainsHDRMetadata                                  = 1 << 1,
 
     /* Flags that are applicable only to instances of IDeckLinkVideoInputFrame */
@@ -504,6 +510,7 @@ enum _BMDDeckLinkAttributeID {
     BMDDeckLinkSupportsHighFrameRateTimecode                     = /* 'HFRT' */ 0x48465254,
     BMDDeckLinkSupportsSynchronizeToCaptureGroup                 = /* 'stcg' */ 0x73746367,
     BMDDeckLinkSupportsSynchronizeToPlaybackGroup                = /* 'stpg' */ 0x73747067,
+    BMDDeckLinkHasMonitorOut                                     = /* 'fmoo' */ 0x666D6F6F,
 
     /* Integers */
 
@@ -579,6 +586,7 @@ enum _BMDDeckLinkStatusID {
     bmdDeckLinkStatusCurrentVideoOutputMode                      = /* 'cvom' */ 0x63766F6D,
     bmdDeckLinkStatusCurrentVideoOutputFlags                     = /* 'cvof' */ 0x63766F66,
     bmdDeckLinkStatusEthernetLink                                = /* 'sels' */ 0x73656C73,
+    bmdDeckLinkStatusEthernetLinkMbps                            = /* 'sesp' */ 0x73657370,
     bmdDeckLinkStatusPCIExpressLinkWidth                         = /* 'pwid' */ 0x70776964,
     bmdDeckLinkStatusPCIExpressLinkSpeed                         = /* 'plnk' */ 0x706C6E6B,
     bmdDeckLinkStatusLastVideoOutputPixelFormat                  = /* 'opix' */ 0x6F706978,

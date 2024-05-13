@@ -1,5 +1,5 @@
 /* -LICENSE-START-
-** Copyright (c) 2023 Blackmagic Design
+** Copyright (c) 2024 Blackmagic Design
 **
 ** Permission is hereby granted, free of charge, to any person or organization
 ** obtaining a copy of the software and accompanying documentation covered by
@@ -24,6 +24,10 @@
 ** DEALINGS IN THE SOFTWARE.
 ** -LICENSE-END-
 */
+
+/*
+ * -- AUTOMATICALLY GENERATED - DO NOT EDIT ---
+ */
 
 #ifndef BMD_DECKLINKAPIMODES_H
 #define BMD_DECKLINKAPIMODES_H
@@ -217,6 +221,7 @@ enum _BMDPixelFormat {
     bmdFormatUnspecified                                         = 0,
     bmdFormat8BitYUV                                             = /* '2vuy' */ 0x32767579,
     bmdFormat10BitYUV                                            = /* 'v210' */ 0x76323130,
+    bmdFormat10BitYUVA                                           = /* 'Ay10' */ 0x41793130,	// Big-endian YUVA 10 bit per component with SMPTE video levels (64-940) for YUV but full range alpha
     bmdFormat8BitARGB                                            = 32,
     bmdFormat8BitBGRA                                            = /* 'BGRA' */ 0x42475241,
     bmdFormat10BitRGB                                            = /* 'r210' */ 0x72323130,	// Big-endian RGB 10-bit per component with SMPTE video levels (64-940). Packed as 2:10:10:10
